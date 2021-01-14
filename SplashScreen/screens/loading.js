@@ -2,12 +2,15 @@ import React, { Component } from 'react'
 import { Animated, Easing , ImageBackground , Image , View} from 'react-native'
 import { styles } from "../styles";
 import App from "../../App";
+import { cos } from 'react-native-reanimated';
 
 export function LoadingFunc(props){
     const movingByColumn = props.movingByColumn;
     const movingByRow = props.movingByRow;
     const opacity = props.opacity;
-    if(!true){
+    const isLoadingDone = props.isLoadingDone 
+    console.log('enters')
+    if(isLoadingDone){
       return(
       <App/>
       )

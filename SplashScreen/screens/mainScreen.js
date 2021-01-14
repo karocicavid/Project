@@ -1,16 +1,22 @@
 import React, { Component } from 'react'
-import { Animated, Easing , ImageBackground , Image , View} from 'react-native'
-import { styles } from "../styles";
-import App from "../../App";
+import { Animated, Easing} from 'react-native'
 import { LoadingFunc } from "./loading";
 export  class MainScreen extends Component {
     constructor(){
         super()
+        this.state={
+            isLoadingDone : false
+        };
         this.animatedValue= new Animated.Value(0);
         this.animatedValueSecond= new Animated.Value(0);
     }
     componentDidMount(){
         this.animate();
+        setTimeout(() => {
+            this.setState({
+                isLoadingDone:true
+            })
+        }, 10000);
     }
 
     animate(){
@@ -44,7 +50,7 @@ export  class MainScreen extends Component {
         })
 
         return (
-        <LoadingFunc movingByColumn={movingByColumn} movingByRow={movingByRow} opacity={opacity}/>
+        <LoadingFunc movingByColumn={movingByColumn} movingByRow={movingByRow} opacity={opacity} isLoadingDone={this.state.isLoadingDone}/>
         )
     }
 }
