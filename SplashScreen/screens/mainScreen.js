@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Animated, Easing , ImageBackground , Image , View} from 'react-native'
 import { styles } from "../styles";
 import App from "../../App";
+import { LoadingFunc } from "./loading";
 export  class MainScreen extends Component {
     constructor(){
         super()
@@ -24,8 +25,8 @@ export  class MainScreen extends Component {
             }
         )}
         Animated.parallel([
-            createAnim(this.animatedValue,3000,Easing.linear),
-            createAnim(this.animatedValueSecond,6000,Easing.linear),
+            createAnim(this.animatedValue,5000,Easing.linear),
+            createAnim(this.animatedValueSecond,7000,Easing.linear),
         ]).start(()=>this.animate())
     }
     render() {
@@ -43,20 +44,7 @@ export  class MainScreen extends Component {
         })
 
         return (
-        <ImageBackground source={require('../image/back.jpg')} style={styles.imageMain}>
-            <Animated.View style={{opacity:opacity}}>
-                <Image  source={require('../image/ieroglif.png')} style={styles.entertaimentImage}/>
-            </Animated.View>
-            <Animated.View style={{...styles.catanasView}}>
-                <Animated.View style={{...styles.leftCatanaView,marginLeft:movingByRow,marginBottom:movingByColumn}}>
-                        <Image style={styles.catanaLeft} source={require('../image/catana.png')}/>
-                </Animated.View>
-                <Animated.View style={{...styles.rightCatanaView,marginRight:movingByRow,marginBottom:movingByColumn}}>
-                        <Image style={styles.catanaRight}  source={require('../image/catana.png')}/>
-                </Animated.View>
-            </Animated.View>
-        </ImageBackground>
-        // <App/>
+        <LoadingFunc movingByColumn={movingByColumn} movingByRow={movingByRow} opacity={opacity}/>
         )
     }
 }

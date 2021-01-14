@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, ScrollView, Text, TextInput, TouchableOpacity,Image, ImageBackground, Modal, Button} from 'react-native';
 import {styles} from "../Styles/styles"; 
 import {connect} from 'react-redux';
-import {searchMovie,favoriteAdd,favoriteDelete} from '../Redux/action';
+import {searchMovie,favoriteAdd,favoriteDelete} from '../../../Redux/actions/action';
 import { ViewForSearch,ViewFromProps,ChangeImage,ModalText } from "../functionsComponents";
 class MovieFinder extends Component {
   constructor(props) {

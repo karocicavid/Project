@@ -1,6 +1,6 @@
 export {CalculatorScreen} from './Calculator'
 export {MovieFinderScreen} from './MovieFinder'
-export {NewsScreen} from './News'
+export {NewsScreen} from './News/News'
 export {ProfileScreen} from './Profile'
 export {SettingsScreen} from './Settings'
 export {ToolsScreen} from './Tools'

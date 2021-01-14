@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TextInput, TouchableOpacity,Image} from 'react-native';
+import { Text, TextInput, TouchableOpacity} from 'react-native';
 import {styles} from "../Styles/styles"; 
 export const ViewForSearch=(props)=>{
     let movieName='';

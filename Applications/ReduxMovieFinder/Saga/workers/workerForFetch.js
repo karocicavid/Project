@@ -1,5 +1,5 @@
 import {  put , call } from "redux-saga/effects";
-import { fromSaga } from '../../Redux/action';
+import { fromSaga } from "../../../../Redux/actions/action";
 
 export const fetchData = (payload) =>{
     return async()=> {

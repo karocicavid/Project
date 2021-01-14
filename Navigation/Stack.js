@@ -1,8 +1,8 @@
 import React from 'react';
 import {createStackNavigator } from '@react-navigation/stack';
 import { Text,TouchableOpacity } from "react-native";
-import {MovieFinderScreen,CalculatorScreen,ToolsScreen} from "../Screens";
-import EntertaimentScreen from "../Screens/Entertaiment";
+import {MovieFinderScreen,CalculatorScreen,ToolsScreen} from "../NavigationScreens";
+import EntertaimentScreen from "../NavigationScreens/Entertaiment";
 import {LogoTitle} from "../Logo";
 import { styles } from "../Applications/ReduxMovieFinder/Styles";
 

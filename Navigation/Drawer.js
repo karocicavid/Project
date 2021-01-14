@@ -2,7 +2,7 @@ import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {AboutMeTab} from './Tab'
 import {EntertaimentStack,ToolsStack} from './Stack';
-import {NewsScreen} from '../Screens';
+import {NewsScreen} from '../NavigationScreens';
 import {drawerOptions} from "../Styles";
 
 const Drawer = createDrawerNavigator();

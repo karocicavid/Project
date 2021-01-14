@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, ImageBackground} from 'react-native';
+import { View, Text, TouchableOpacity} from 'react-native';
 import {styles} from "../Styles/styles"; 
 import { ChangeImage } from "./imageView";
 

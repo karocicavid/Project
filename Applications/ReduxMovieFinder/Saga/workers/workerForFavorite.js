@@ -1,6 +1,6 @@
 import { call, put, select } from "redux-saga/effects";
 import { getList } from "../selectors";
-import { checkedFavorite } from "../../Redux/action";
+import { checkedFavorite } from "../../../../Redux/actions/action";
 
 export function* workerForFavorite(action){
    const data = yield select(getList);

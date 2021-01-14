@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {ProfileScreen,SettingsScreen} from '../Screens';
+import {ProfileScreen,SettingsScreen} from '../NavigationScreens';
 import {LogoTitle} from "../Logo";
 
 

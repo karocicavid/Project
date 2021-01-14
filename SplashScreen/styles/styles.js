@@ -9,8 +9,8 @@ export const styles = StyleSheet.create({
         alignItems:'center'
     },
     entertaimentImage:{
-        width:120,
-        height:120,
+        width:60,
+        height:60,
     },
     catanasView:{
         flex:1,
