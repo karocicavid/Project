@@ -1,0 +1,88 @@
+import {StyleSheet } from "react-native";
+export const styles = StyleSheet.create({
+    imageMain:{
+        flex:1,
+        width:'100%',
+        height:'100%',
+        resizeMode:'contain',
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    imageSecond:{
+        flex:1,
+        width:'100%',
+        height:900,
+        resizeMode:'contain',
+        alignItems:'center',
+        justifyContent:'center'
+    },
+    entertaimentImage:{
+        width:120,
+        height:120,
+    },
+    loadingText:{
+        fontSize:32,
+    },
+    entertaimentView:{
+        marginBottom:400,
+    },
+    loadingView:{
+        alignItems:'center',
+        paddingBottom:90
+    },
+    animationView:{
+        flexDirection:'row',
+    },
+    animatedView:{
+        height: 16, 
+        width: 16, 
+        backgroundColor: 'black',
+        borderRadius:30, 
+        marginLeft: 3, 
+        marginTop: 3
+    },
+    catanasView:{
+        flex:1,
+        width:'100%',
+        justifyContent:"center",
+        alignItems:'center',
+        flexDirection:'row',
+        top:70,
+    },
+    leftCatanaView:{
+        flex:1,
+        width:'100%',
+        justifyContent:"center",
+        alignItems:'center',
+        flexDirection:'row',
+        top:90,
+    },
+    rightCatanaView:{
+        flex:1,
+        width:'100%',
+        justifyContent:"center",
+        alignItems:'center',
+        flexDirection:'row',
+        top:90,
+    },
+    catanaLeft:{
+        flex:1,
+        width:'100%',
+        height:'30%',
+        resizeMode:'contain',
+        transform:[{scale:1.3}],
+        position:'absolute',
+        zIndex:1,
+        left:80
+    },
+    catanaRight:{
+        flex:1,
+        width:'100%',
+        height:'30%',
+        resizeMode:'contain',
+        transform:[{scale:1.3},{rotateY:'180deg'}],
+        position:'absolute',
+        zIndex:2,
+        right:80
+    }
+});
