@@ -1,5 +1,5 @@
 import {  put , call } from "redux-saga/effects";
-import { fromSaga , loading} from "../../../../Redux/actions/action";
+import { fromSaga , loading} from "../../Redux/actions/action";
 
 export const fetchData = (payload) =>{
     return async()=> {
@@ -8,7 +8,7 @@ export const fetchData = (payload) =>{
             return await response.json();
         } 
         catch (e){
-        console.log('error')
+        alert('Poor or no internet connection.Check your Wifi')
         }
     }
 }

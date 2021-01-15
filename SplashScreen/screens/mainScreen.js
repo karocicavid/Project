@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { Animated, Easing} from 'react-native'
+import { Animated, Easing , AppState} from 'react-native'
 import { LoadingFunc } from "./loading";
 export  class MainScreen extends Component {
     constructor(){
         super()
         this.state={
-            isLoadingDone : false
+            isLoadingDone : false,
+            appState : AppState.currentState
         };
         this.animatedValue= new Animated.Value(0);
         this.animatedValueSecond= new Animated.Value(0);
@@ -17,8 +18,16 @@ export  class MainScreen extends Component {
                 isLoadingDone:true
             })
         }, 10000);
+        AppState.addEventListener('change',this.listener)
     }
-
+    componentWillUnmount(){
+        AppState.removeEventListener('change',this.listener)
+    }
+    listener=(nextState)=>{
+        if(this.state.appState.match(/inactive|background/) && nextState =='active'){
+            alert('Welcome back Sensei!')
+        }
+    }
     animate(){
         const createAnim = (value,duration,easing,delay=0)=>{
         return Animated.timing(

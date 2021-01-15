@@ -1,4 +1,4 @@
-import { FAVORITE,CHECKEDFAVORITE,DELETEBYONE,SEARCH,SEARCHFROMSAGA,LOADING } from "../constants";
+import { FAVORITE,CHECKEDFAVORITE,DELETEBYONE,SEARCH,SEARCHFROMSAGA,LOADING,CHECKEDDELETE } from "../constants";
 export const favoriteAdd = (props) =>{
     return(
         {
@@ -19,6 +19,12 @@ export const checkedFavorite = (props) =>{
 export const favoriteDelete = (props)=>{
     return({
         type:DELETEBYONE,
+        payload:props
+    })
+}
+export const checkedDelete = (props)=>{
+    return({
+        type:CHECKEDDELETE,
         payload:props
     })
 }

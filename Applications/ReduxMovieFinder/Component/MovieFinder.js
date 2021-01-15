@@ -5,6 +5,8 @@ import {connect} from 'react-redux';
 import {searchMovie,favoriteAdd,favoriteDelete} from '../../../Redux/actions/action';
 import { ViewForSearch,ViewFromProps,ChangeImage,ModalText } from "../functionsComponents";
 import { LoadingScreen } from "../../../loadingScreen/screens/loadingScreen";
+import NetInfo from "@react-native-community/netinfo";
+
 class MovieFinder extends Component {
   constructor(props) {
     super(props)
@@ -21,12 +23,14 @@ class MovieFinder extends Component {
     })
   }
   setCatalogShow(data){
-    console.log('setcatalgShow data-',data)
     this.catalogShow = data;//problema tut
-    console.log('catalogshow - ',this.catalogShow)
+  }
+  componentDidMount(){
+    NetInfo.fetch().then(state => {
+      !state.isConnected && alert('Poor or no connection.Check your internet')
+     });
   }
   render() {
-      console.log(this.props.isLoading.loading)
       return(
         
         <ImageBackground source={require('../image/myphoto.jpg')} style={styles.image}>
