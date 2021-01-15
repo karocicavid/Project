@@ -1,5 +1,5 @@
 import {  put , call } from "redux-saga/effects";
-import { fromSaga } from "../../../../Redux/actions/action";
+import { fromSaga , loading} from "../../../../Redux/actions/action";
 
 export const fetchData = (payload) =>{
     return async()=> {
@@ -14,6 +14,8 @@ export const fetchData = (payload) =>{
 }
 
 export function* workerForFetch (payload){
+   yield put(loading(true));
    const example =  yield call (fetchData(payload));
+   yield put(loading(false));
    yield put(fromSaga(example))
 }

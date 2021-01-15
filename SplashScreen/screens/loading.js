@@ -9,7 +9,6 @@ export function LoadingFunc(props){
     const movingByRow = props.movingByRow;
     const opacity = props.opacity;
     const isLoadingDone = props.isLoadingDone 
-    console.log('enters')
     if(isLoadingDone){
       return(
       <App/>

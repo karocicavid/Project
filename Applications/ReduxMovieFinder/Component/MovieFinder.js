@@ -4,6 +4,7 @@ import {styles} from "../Styles/styles";
 import {connect} from 'react-redux';
 import {searchMovie,favoriteAdd,favoriteDelete} from '../../../Redux/actions/action';
 import { ViewForSearch,ViewFromProps,ChangeImage,ModalText } from "../functionsComponents";
+import { LoadingScreen } from "../../../loadingScreen/screens/loadingScreen";
 class MovieFinder extends Component {
   constructor(props) {
     super(props)
@@ -25,11 +26,14 @@ class MovieFinder extends Component {
     console.log('catalogshow - ',this.catalogShow)
   }
   render() {
+      console.log(this.props.isLoading.loading)
       return(
-        <>
+        
         <ImageBackground source={require('../image/myphoto.jpg')} style={styles.image}>
-        <ViewForSearch props={this.props} movieName={this.movieName} theUrl={this.url}/>
-        <ScrollView style={styles.scrollView}> 
+          {this.props.isLoading.loading?(<LoadingScreen/>):(
+          <>
+          <ViewForSearch props={this.props} movieName={this.movieName} theUrl={this.url}/>
+          <ScrollView style={styles.scrollView}> 
                   <ViewFromProps props={this.props} catalogShow={this.catalogShow} changeState={this.changeState} setCatalogShow={this.setCatalogShow}/>
                   <Modal visible={this.state.modalShow}>
                     <View style={styles.viewModal}>
@@ -40,9 +44,10 @@ class MovieFinder extends Component {
                           </ScrollView>
                     </View> 
                   </Modal> 
-          </ScrollView>   
+          </ScrollView> 
+          </>)}
         </ImageBackground>
-       </>
+       
       )   
     }
 }
@@ -58,7 +63,8 @@ function mapDispatchToProps(dispatch){
 function mapStateToProps(state){
   return{
     list : state.reducerForSearch.list,
-    listFav : state.reducerForFavorite.list
+    listFav : state.reducerForFavorite.list,
+    isLoading:state.reducerForLoading
   }
 }
 

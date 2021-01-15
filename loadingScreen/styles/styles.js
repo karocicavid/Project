@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     imageSecond:{
         flex:1,
         width:'100%',
-        height:900,
+        height:'100%',
         resizeMode:'contain',
         alignItems:'center',
         justifyContent:'center'
@@ -21,14 +21,15 @@ export const styles = StyleSheet.create({
         height:120,
     },
     loadingText:{
-        fontSize:32,
+        fontSize:36,
     },
     entertaimentView:{
         marginBottom:400,
     },
     loadingView:{
+        flex:1,
+        justifyContent:'center',
         alignItems:'center',
-        paddingBottom:90
     },
     animationView:{
         flexDirection:'row',
@@ -41,48 +42,4 @@ export const styles = StyleSheet.create({
         marginLeft: 3, 
         marginTop: 3
     },
-    catanasView:{
-        flex:1,
-        width:'100%',
-        justifyContent:"center",
-        alignItems:'center',
-        flexDirection:'row',
-        top:70,
-    },
-    leftCatanaView:{
-        flex:1,
-        width:'100%',
-        justifyContent:"center",
-        alignItems:'center',
-        flexDirection:'row',
-        top:90,
-    },
-    rightCatanaView:{
-        flex:1,
-        width:'100%',
-        justifyContent:"center",
-        alignItems:'center',
-        flexDirection:'row',
-        top:90,
-    },
-    catanaLeft:{
-        flex:1,
-        width:'100%',
-        height:'30%',
-        resizeMode:'contain',
-        transform:[{scale:1.3}],
-        position:'absolute',
-        zIndex:1,
-        left:80
-    },
-    catanaRight:{
-        flex:1,
-        width:'100%',
-        height:'30%',
-        resizeMode:'contain',
-        transform:[{scale:1.3},{rotateY:'180deg'}],
-        position:'absolute',
-        zIndex:2,
-        right:80
-    }
 });

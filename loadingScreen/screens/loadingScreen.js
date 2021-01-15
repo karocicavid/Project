@@ -39,15 +39,13 @@ export  class LoadingScreen extends Component {
         const animations = loadingArr.map((a,i)=>{
             return <Animated.View key={i} style={{opacity:this.loadingValue[a],...styles.animatedView}}/>
         })
-        return ( 
-        <ImageBackground source={require('../image/back.jpg')} style={styles.imageSecond}>    
+        return (
             <View style={styles.loadingView}>
-                <View><Text style={styles.loadingText}>Loading</Text></View>
+                <Text style={styles.loadingText}>Loading</Text>
                 <View style={styles.animationView}>
                 {animations}
                 </View>
             </View>
-        </ImageBackground>
         )
     }
 }

@@ -1,7 +1,8 @@
+import { FAVORITE,CHECKEDFAVORITE,DELETEBYONE,SEARCH,SEARCHFROMSAGA,LOADING } from "../constants";
 export const favoriteAdd = (props) =>{
     return(
         {
-        type:'favorite',
+        type:FAVORITE,
         payload:props
         }
     )
@@ -9,7 +10,7 @@ export const favoriteAdd = (props) =>{
 export const checkedFavorite = (props) =>{
     return(
         {
-        type:'checkedFavorite',
+        type:CHECKEDFAVORITE,
         payload:props
         }
     )
@@ -17,7 +18,7 @@ export const checkedFavorite = (props) =>{
 
 export const favoriteDelete = (props)=>{
     return({
-        type:'deleteByOne',
+        type:DELETEBYONE,
         payload:props
     })
 }
@@ -25,7 +26,7 @@ export const favoriteDelete = (props)=>{
 export const searchMovie = (props) => {
     return(
         {
-        type:'search',
+        type:SEARCH,
         payload:props
         }
     )
@@ -33,7 +34,14 @@ export const searchMovie = (props) => {
 
 export const fromSaga = (data) =>{
     return({
-        type:'searchFromSaga',
+        type:SEARCHFROMSAGA,
         payload : data
     })
 }
+export const loading = (check) =>{
+    return({
+        type:LOADING,
+        payload:check
+    })
+}
+
