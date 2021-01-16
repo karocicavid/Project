@@ -22,6 +22,8 @@ export const styles = StyleSheet.create({
     },
     loadingText:{
         fontSize:36,
+        alignSelf:'center',
+        top:100
     },
     entertaimentView:{
         marginBottom:400,
@@ -30,9 +32,12 @@ export const styles = StyleSheet.create({
         flex:1,
         justifyContent:'center',
         alignItems:'center',
+        opacity:0.8
     },
     animationView:{
         flexDirection:'row',
+        alignSelf:'center',
+        top:100
     },
     animatedView:{
         height: 16, 

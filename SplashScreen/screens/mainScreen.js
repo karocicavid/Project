@@ -22,9 +22,10 @@ export  class MainScreen extends Component {
     }
     componentWillUnmount(){
         AppState.removeEventListener('change',this.listener)
+        
     }
     listener=(nextState)=>{
-        if(this.state.appState.match(/inactive|background/) && nextState =='active'){
+        if(this.state.appState.match(/background/) && nextState =='active'){
             alert('Welcome back Sensei!')
         }
     }

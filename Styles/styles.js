@@ -1,6 +1,5 @@
 import {StyleSheet} from 'react-native'
 export const styles=StyleSheet.create({
-    //MovieFinder
     container: {
       flex : 1,
       backgroundColor:'#fff',
@@ -29,6 +28,11 @@ export const styles=StyleSheet.create({
         flex:1,
         alignItems:'center',
         justifyContent:'center'
+    },
+    newsView:{
+      flex:1,
+      alignItems:'center',
+      justifyContent:'center'
     },
     imageForScreens :{
         flex:1,
@@ -92,7 +96,6 @@ export const styles=StyleSheet.create({
       width:'100%',
       alignItems:'stretch'
     },
-    //Screen
     screenView :{
       flex: 1,
       justifyContent: 'flex-start',
@@ -121,7 +124,6 @@ export const styles=StyleSheet.create({
         alignItems:'center',
         justifyContent : 'center',
     },
-    //Calculator
     device : {
         flex : 1,
       },

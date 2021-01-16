@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Text, TextInput, TouchableOpacity,Image, ImageBackground, Modal, Button} from 'react-native';
+import { View, ScrollView, ImageBackground, Modal, Button} from 'react-native';
 import {styles} from "../Styles/styles"; 
 import {connect} from 'react-redux';
 import {searchMovie,favoriteAdd,favoriteDelete} from '../../../Redux/actions/action';
@@ -16,23 +16,29 @@ class MovieFinder extends Component {
     this.changeState=this.changeState.bind(this)
     this.setCatalogShow=this.setCatalogShow.bind(this)
   }
+
+  unsubscribe =()=>{ NetInfo.addEventListener(state => {
+    !state.isConnected && alert('Poor or no internet connection.Check your wifi data.')
+  });}
+
   catalogShow={}
   changeState(){
     this.setState({
       modalShow:true
     })
   }
+
   setCatalogShow(data){
-    this.catalogShow = data;//problema tut
+    this.catalogShow = data;
   }
   componentDidMount(){
-    NetInfo.fetch().then(state => {
-      !state.isConnected && alert('Poor or no connection.Check your internet')
-     });
+    this.unsubscribe()
+  }
+  componentWillUnmount(){
+    this.unsubscribe()
   }
   render() {
       return(
-        
         <ImageBackground source={require('../image/myphoto.jpg')} style={styles.image}>
           {this.props.isLoading.loading?(<LoadingScreen/>):(
           <>

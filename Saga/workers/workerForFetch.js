@@ -8,7 +8,7 @@ export const fetchData = (payload) =>{
             return await response.json();
         } 
         catch (e){
-        alert('Poor or no internet connection.Check your Wifi')
+            console.log(e)
         }
     }
 }

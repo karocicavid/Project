@@ -11,28 +11,32 @@ export class NewsScreen extends Component{
     visible : true,
     } 
   }
+  unsubscribe =()=>{ NetInfo.addEventListener(state => {
+    !state.isConnected && alert('Poor or no internet connection.Check your wifi data.')
+  });}
   hideSpinner(){
     this.setState({visible:false})
   }
   componentDidMount(){
-    NetInfo.fetch().then(state => {
-      !state.isConnected &&  alert('Poor or no internet connection.Check your Wifi')
-     });
+    this.unsubscribe()
+  }
+  componentWillUnmount(){
+    this.unsubscribe()
   }
   render(){
     const {navigation}=this.props
       return(
         <> 
           <LogoTitle navigation={navigation}/>
+          {this.state.visible&&(
+            <LoadingScreen/>
+          )}
           <WebView
             onLoad={()=>this.hideSpinner()}
             source={{
               uri: 'https://www.ufc.com/'
             }}
           />
-          {this.state.visible&&(
-            <LoadingScreen/>
-          )}
         </>
       );
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Animated, ImageBackground} from 'react-native';
-import { View , Text} from "react-native";
+import { View , Text , Modal} from "react-native";
 import { styles } from '../styles';
 
 const loadingArr = [];
@@ -40,12 +40,14 @@ export  class LoadingScreen extends Component {
             return <Animated.View key={i} style={{opacity:this.loadingValue[a],...styles.animatedView}}/>
         })
         return (
-            <View style={styles.loadingView}>
-                <Text style={styles.loadingText}>Loading</Text>
-                <View style={styles.animationView}>
-                {animations}
-                </View>
-            </View>
+                <Modal style={styles.loadingView} transparent >
+                    <Text style={styles.loadingText}>Loading</Text>
+                    <View style={styles.animationView}>
+                    {animations}
+                    </View>
+                </Modal>
+                
+            
         )
     }
 }
