@@ -12,7 +12,7 @@ export class NewsScreen extends Component{
     } 
   }
   unsubscribe =()=>{ NetInfo.addEventListener(state => {
-    !state.isConnected && alert('Poor or no internet connection.Check your wifi data.')
+    !state.isInternetReachable && alert('Poor or no internet connection.Check your wifi data.')
   });}
   hideSpinner(){
     this.setState({visible:false})

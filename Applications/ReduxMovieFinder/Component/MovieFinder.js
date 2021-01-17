@@ -18,7 +18,7 @@ class MovieFinder extends Component {
   }
 
   unsubscribe =()=>{ NetInfo.addEventListener(state => {
-    !state.isConnected && alert(strings.netInfo)
+    !state.isInternetReachable && alert(strings.netInfo)
   });}
 
   catalogShow={}
