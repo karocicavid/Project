@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Animated, ImageBackground} from 'react-native';
 import { View , Text , Modal} from "react-native";
 import { styles } from '../styles';
+import { strings } from "../../Localization";
 
 const loadingArr = [];
 for(let i = 0; i < 8 ; i++ ){
@@ -41,7 +42,7 @@ export  class LoadingScreen extends Component {
         })
         return (
                 <Modal style={styles.loadingView} transparent >
-                    <Text style={styles.loadingText}>Loading</Text>
+                    <Text style={styles.loadingText}>{strings.loading}</Text>
                     <View style={styles.animationView}>
                     {animations}
                     </View>

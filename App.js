@@ -9,18 +9,6 @@ export default class App extends Component {
       appState : AppState.currentState
   };
   }
-  componentDidMount(){
-      AppState.addEventListener('change',this.listener)
-  }
-  componentWillUnmount(){
-      AppState.removeEventListener('change',this.listener)
-      
-  }
-  listener=(nextState)=>{
-    if(this.state.appState.match(/background/) && nextState =='active'){
-        alert('Welcome back Sensei!')
-    }
-  }
   render(){
     return(
      <NavigationContainer>

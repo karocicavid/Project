@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Animated, Easing , AppState} from 'react-native'
 import { LoadingFunc } from "./loading";
+import { strings } from "../../Localization";
 export  class MainScreen extends Component {
     constructor(){
         super()
@@ -25,8 +26,9 @@ export  class MainScreen extends Component {
         
     }
     listener=(nextState)=>{
+        nextState=='background'&& this.setState({appState:nextState})
         if(this.state.appState.match(/background/) && nextState =='active'){
-            alert('Welcome back Sensei!')
+            alert(strings.toSensei)
         }
     }
     animate(){

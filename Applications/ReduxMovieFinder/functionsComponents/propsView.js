@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity} from 'react-native';
 import {styles} from "../Styles/styles"; 
 import { ChangeImage } from "./imageView";
+import {strings} from "../../../Localization";
 
 export const ViewFromProps=(props)=>{
     if(props.props.route.name == "Back to search"){ //favorite screen
@@ -14,7 +15,7 @@ export const ViewFromProps=(props)=>{
                    <ChangeImage style={styles.imageInput2} image = {catalog}/>
                  </TouchableOpacity>
                  <TouchableOpacity onPress = {()=>{props.props.delete(catalog)}}>
-                     <Text style={styles.textModalDell}>Delete</Text>
+                     <Text style={styles.textModalDell}>{strings.delete}</Text>
                  </TouchableOpacity>
                  <Text style={styles.text}>{catalog.name}</Text>
              </View>
@@ -32,7 +33,7 @@ export const ViewFromProps=(props)=>{
                    <ChangeImage style={styles.imageInput} image = {catalog.show}/>
                  </TouchableOpacity> 
                  <TouchableOpacity onPress = {()=>{props.props.favorite(catalog.show)}}>
-                     <Text style={styles.textModalAdd}>Add</Text>
+                     <Text style={styles.textModalAdd}>{strings.add}</Text>
                  </TouchableOpacity>
                  <Text style={styles.text}>{catalog.show.name}</Text>
              </View>

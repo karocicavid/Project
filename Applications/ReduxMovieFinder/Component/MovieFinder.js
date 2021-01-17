@@ -6,7 +6,7 @@ import {searchMovie,favoriteAdd,favoriteDelete} from '../../../Redux/actions/act
 import { ViewForSearch,ViewFromProps,ChangeImage,ModalText } from "../functionsComponents";
 import { LoadingScreen } from "../../../loadingScreen/screens/loadingScreen";
 import NetInfo from "@react-native-community/netinfo";
-
+import { strings } from "../../../Localization";
 class MovieFinder extends Component {
   constructor(props) {
     super(props)
@@ -18,7 +18,7 @@ class MovieFinder extends Component {
   }
 
   unsubscribe =()=>{ NetInfo.addEventListener(state => {
-    !state.isConnected && alert('Poor or no internet connection.Check your wifi data.')
+    !state.isConnected && alert(strings.netInfo)
   });}
 
   catalogShow={}
@@ -47,7 +47,7 @@ class MovieFinder extends Component {
                   <ViewFromProps props={this.props} catalogShow={this.catalogShow} changeState={this.changeState} setCatalogShow={this.setCatalogShow}/>
                   <Modal visible={this.state.modalShow}>
                     <View style={styles.viewModal}>
-                          <Button title='Hide Description' onPress={()=>(this.setState({modalShow:false}))}/>
+                          <Button title={strings.hideDescriptions} onPress={()=>(this.setState({modalShow:false}))}/>
                           <ScrollView> 
                           <ModalText show={this.catalogShow}/>
                           <ChangeImage style={styles.imageInput} image = {this.catalogShow}/>

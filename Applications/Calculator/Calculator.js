@@ -2,6 +2,7 @@ import React , {Component} from 'react';
 import {Text,View,TouchableOpacity} from 'react-native';
 import  {DelLastElement,GetLastElement,GetLastValue,IsDotExist,IsLastOperationSign,DivideByZero,Square,PlusMinus} from './CalculatorMethods';
 import {styles} from '../../Styles';
+import { strings } from "../../Localization";
 
 export default class Calculator extends Component{
   constructor(props){
@@ -46,7 +47,7 @@ export default class Calculator extends Component{
       }
     }
     if(getValue=='=' && GetLastValue(this.state.operationText)&&this.state.resultText !==0){
-      if(DivideByZero(this.state.operationText)=="0"){alert("Error")}
+      if(DivideByZero(this.state.operationText)=="0"){alert(strings.error)}
       else{this.setState(prevstate=>({resultText :eval(prevstate.operationText)}))}
     }
     if(getValue=='C' ){

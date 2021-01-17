@@ -1,0 +1,45 @@
+import LocalizedStrings from 'react-native-localization';
+export const strings = new LocalizedStrings({
+ en:{
+   toSensei:'Welcome back Sensei!',
+   netInfo:'Poor or no internet connection,check your network',
+   loading:'Loading',
+   entertaiment:'Entertaiment',
+   news:'News',
+   tools:'Tools',
+   aboutMe:'About Me',
+   calculator:'Calculator',
+   profile:'Profile',
+   settings:'Settings',
+   myFavorits:'My Favorits',
+   enterNameOfMovie:'Enter name of your movie',
+   search:'Search',
+   add:'Add to favorits',
+   delete:'Delete',
+   error:'Error',
+   hideDescriptions:'Hide Description',
+   backToSearch:'Back to search',
+   movieFinder:'MovieFinder'
+ },
+ ru: {
+    toSensei:'С возвращением Сенсей!',
+    netInfo:'Плохое подключение к Интернету или его отсутствие,проверьте свою сеть',
+    loading:'Загрузка',
+    entertaiment:'Развлечения',
+    news:'Новости',
+    tools:'Инструменты',
+    aboutMe:'Про Меня',
+    calculator:'Калькулятор',
+    profile:'Мой профиль',
+    settings:'Настройки',
+    myFavorits:'Мои Избранные',
+    enterNameOfMovie:'Введите название фильма',
+    search:'Поиск',
+    add:'Добавить в избранные',
+    delete:'Удалить',
+    error:'Ошибка',
+    hideDescriptions:'Закрыть',
+    backToSearch:'Назад к поиску',
+    movieFinder:'ПоискФильмов'
+ }
+});
