@@ -1,35 +1,41 @@
 import React, { Component } from 'react'
 import { Animated, Easing , AppState} from 'react-native'
 import { LoadingFunc } from "./loading";
-import { strings } from "../../Localization";
-export  class MainScreen extends Component {
-    constructor(){
-        super()
+import { strings } from "../../languageChange/localization";
+import { splashSetTimeOut } from "../../redux/actions/action";
+import {connect} from 'react-redux';
+
+
+export function reset(){
+    this.setState({})
+}
+
+class MainScreen extends Component {
+    constructor(props){
+        super(props)
         this.state={
-            isLoadingDone : false,
             appState : AppState.currentState
         };
         this.animatedValue= new Animated.Value(0);
         this.animatedValueSecond= new Animated.Value(0);
+        reset=reset.bind(this)
     }
+
     componentDidMount(){
-        this.animate();
-        setTimeout(() => {
-            this.setState({
-                isLoadingDone:true
-            })
-        }, 10000);
         AppState.addEventListener('change',this.listener)
+        console.log('mount - ',this.props);
+        this.animate();
+        this.props.setTime()
+    }
+    componentDidUpdate(){
+        console.log('update - ',this.props);
     }
     componentWillUnmount(){
         AppState.removeEventListener('change',this.listener)
-        
     }
     listener=(nextState)=>{
         nextState=='background'&& this.setState({appState:nextState})
-        if(this.state.appState.match(/background/) && nextState =='active'){
-            alert(strings.toSensei)
-        }
+        this.state.appState.match(/background/) && nextState =='active' && alert(strings.toSensei)
     }
     animate(){
         const createAnim = (value,duration,easing,delay=0)=>{
@@ -62,8 +68,24 @@ export  class MainScreen extends Component {
         })
 
         return (
-        <LoadingFunc movingByColumn={movingByColumn} movingByRow={movingByRow} opacity={opacity} isLoadingDone={this.state.isLoadingDone}/>
+        <LoadingFunc movingByColumn={movingByColumn} movingByRow={movingByRow} opacity={opacity} isLoadingDone={this.props.check}/>
         )
     }
 }
+function mapDispatchToProps(dispatch){
+    return{
+      setTime : () => dispatch(splashSetTimeOut())
+    }
+}
+
+function mapStateToProps(state){
+  return{
+   check : state.reducerForSplashScreen.loading
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(MainScreen);
+
+
+
 

@@ -1,5 +1,5 @@
 import React , {Component} from 'react';
-import { LogoTitle } from "../Logo";
+import { LogoTitle } from "../logo";
 import { WebView } from "react-native-webview";
 import { LoadingScreen } from "../loadingScreen/screens/loadingScreen";
 import NetInfo from "@react-native-community/netinfo";
@@ -14,12 +14,15 @@ export class NewsScreen extends Component{
   unsubscribe =()=>{ NetInfo.addEventListener(state => {
     !state.isInternetReachable && alert('Poor or no internet connection.Check your wifi data.')
   });}
+
   hideSpinner(){
     this.setState({visible:false})
   }
+
   componentDidMount(){
     this.unsubscribe()
   }
+  
   componentWillUnmount(){
     this.unsubscribe()
   }

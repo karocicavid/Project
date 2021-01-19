@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, TextInput, TouchableOpacity} from 'react-native';
-import {styles} from "../Styles/styles"; 
-import { strings } from "../../../Localization";
+import {styles} from "../styles/styles"; 
+import { strings } from "../../../languageChange/localization";
 export const ViewForSearch=(props)=>{
     let movieName='';
     if(props.props.route.name == " "){

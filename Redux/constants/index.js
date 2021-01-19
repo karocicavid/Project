@@ -5,3 +5,5 @@ export const  CHECKEDDELETE = 'checkedDelete';
 export const  SEARCH = 'search';
 export const  SEARCHFROMSAGA = 'searchFromSaga';
 export const  LOADING = 'loading';
+export const  SETTIMEOUT = 'setTimeOut';
+export const  SETTIMEOUTFROMSAGA = 'setTimeOutFromSaga';

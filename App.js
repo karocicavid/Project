@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import {MyDrawer} from "./Navigation/Drawer";
+import {MyDrawer} from "./navigation/drawer";
 import { AppState } from "react-native";
 export default class App extends Component {
   constructor(props){

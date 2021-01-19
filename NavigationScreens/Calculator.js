@@ -1,9 +1,7 @@
 import React from 'react';
-import Calculator from '../Applications/Calculator/Calculator';
+import Calculator from '../apps/calculator/calculator';
 export function CalculatorScreen({}) {
     return(
-        <>
          <Calculator/>
-        </>
       );
 }

@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
-import { Animated, Easing , ImageBackground , Image , View} from 'react-native'
+import React from 'react'
+import { Animated, ImageBackground , Image} from 'react-native'
 import { styles } from "../styles";
 import App from "../../App";
-import { cos } from 'react-native-reanimated';
 
 export function LoadingFunc(props){
     const movingByColumn = props.movingByColumn;

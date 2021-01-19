@@ -1,4 +1,4 @@
-import { FAVORITE,CHECKEDFAVORITE,DELETEBYONE,SEARCH,SEARCHFROMSAGA,LOADING,CHECKEDDELETE } from "../constants";
+import { FAVORITE,CHECKEDFAVORITE,DELETEBYONE,SEARCH,SEARCHFROMSAGA,LOADING,CHECKEDDELETE , SETTIMEOUT , SETTIMEOUTFROMSAGA} from "../constants";
 export const favoriteAdd = (props) =>{
     return(
         {
@@ -44,10 +44,23 @@ export const fromSaga = (data) =>{
         payload : data
     })
 }
+
 export const loading = (check) =>{
     return({
         type:LOADING,
         payload:check
+    })
+}
+
+export const splashSetTimeOut = () => {
+    return({
+        type:SETTIMEOUT,
+    })
+}
+export const splashSetTimeOutFromSaga = (data) => {
+    return({
+        type:SETTIMEOUTFROMSAGA,
+        payload:data
     })
 }
 

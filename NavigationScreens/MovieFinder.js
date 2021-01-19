@@ -1,9 +1,7 @@
 import React from 'react';
-import { RootContainer } from '../Applications/ReduxMovieFinder/index'
+import App from '../apps/reduxMovieFinder/app'
 export function MovieFinderScreen({}) {
     return(
-        <>
-         <RootContainer/>
-        </>
+         <App/>
       );
 }

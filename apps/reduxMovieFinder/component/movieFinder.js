@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { View, ScrollView, ImageBackground, Modal, Button} from 'react-native';
-import {styles} from "../Styles/styles"; 
+import {styles} from "../styles/styles"; 
 import {connect} from 'react-redux';
-import {searchMovie,favoriteAdd,favoriteDelete} from '../../../Redux/actions/action';
+import {searchMovie,favoriteAdd,favoriteDelete} from '../../../redux/actions/action';
 import { ViewForSearch,ViewFromProps,ChangeImage,ModalText } from "../functionsComponents";
 import { LoadingScreen } from "../../../loadingScreen/screens/loadingScreen";
 import NetInfo from "@react-native-community/netinfo";
-import { strings } from "../../../Localization";
+import { strings } from "../../../languageChange/localization";
 class MovieFinder extends Component {
   constructor(props) {
     super(props)
@@ -57,7 +57,6 @@ class MovieFinder extends Component {
           </ScrollView> 
           </>)}
         </ImageBackground>
-       
       )   
     }
 }

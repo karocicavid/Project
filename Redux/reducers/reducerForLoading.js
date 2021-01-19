@@ -1,4 +1,4 @@
-import { LOADING } from "../constants";
+import { LOADING , SETTIMEOUTFROMSAGA} from "../constants";
 const initialState = {loading:false};
 
 export const reducerForLoading = (state = initialState,action)=>{

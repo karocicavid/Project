@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Animated, ImageBackground} from 'react-native';
 import { View , Text , Modal} from "react-native";
 import { styles } from '../styles';
-import { strings } from "../../Localization";
+import { strings } from "../../languageChange/localization";
 
 const loadingArr = [];
 for(let i = 0; i < 8 ; i++ ){

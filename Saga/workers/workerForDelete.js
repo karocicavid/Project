@@ -1,6 +1,6 @@
 import { call, put, select } from "redux-saga/effects";
 import { getList } from "../selectors";
-import { checkedDelete } from "../../Redux/actions/action";
+import { checkedDelete } from "../../redux/actions/action";
 
 export function* workerForDelete(action){
    const data = yield select(getList);

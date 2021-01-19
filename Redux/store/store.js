@@ -1,18 +1,18 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
-import {reducerForFavorite,reducerForSearch,reducerForLoading} from '../reducers'; 
+import {reducerForFavorite,reducerForSearch,reducerForLoading,reducerForSplashScreen} from '../reducers'; 
 import { persistReducer,persistStore } from "redux-persist";
 import AsyncStorage from "@react-native-community/async-storage";
 import createSagaMiddleware from "redux-saga";
-import { watchData } from "../../Saga/watcher/watchers";
+import { watchData } from "../../saga/watcher/watchers";
 
 const sagaMiddleware = createSagaMiddleware();
 
 
-const rootReducer = combineReducers( { reducerForFavorite , reducerForSearch , reducerForLoading} )
+const rootReducer = combineReducers( { reducerForFavorite , reducerForSearch , reducerForLoading , reducerForSplashScreen} )
 
 const persistConfig = {
     key:'root',
-    storage:AsyncStorage
+    storage:AsyncStorage,
 }
 
 const persistedReducer = persistReducer(persistConfig,rootReducer);

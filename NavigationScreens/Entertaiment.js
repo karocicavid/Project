@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import {ImageBackground,Text} from 'react-native';
-import {styles} from '../Styles/styles';
+import {styles} from '../styles/styles';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Animated,Easing } from "react-native";
+import { LogoTitle } from "../logo";
 export default class EntertaimentScreen extends Component{
   constructor(props){
     super(props)
@@ -16,7 +17,7 @@ export default class EntertaimentScreen extends Component{
   animate(){
     this.animValue1.setValue(0)
     this.animValue2.setValue(0)
-    const createAnim = function(value,duration,easing,delay=0){
+    const createAnim = (value,duration,easing,delay=0)=>{
       return Animated.timing(
         value,
         {
@@ -47,8 +48,9 @@ export default class EntertaimentScreen extends Component{
     return(
       <Animated.View style={{marginTop,flex:1}}>
             <ImageBackground source={require('../image/entertaiment.jpg')} style={styles.imageForScreens}>
+            <LogoTitle navigation={navigation}/>
             <Animated.View style={{marginLeft:marginLeft}}>
-              <TouchableOpacity onPress={()=>(navigation.navigate('MovieFinder'))}>
+              <TouchableOpacity onPress={()=>(navigation.navigate('MovieFinder'))} style={styles.touchableMovie}>
                 <Text style={styles.textMovieFinder}>MovieFinder</Text>
               </TouchableOpacity>
             </Animated.View>

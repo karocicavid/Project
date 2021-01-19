@@ -1,8 +1,8 @@
 import React , {Component} from 'react';
 import {Text,View,TouchableOpacity} from 'react-native';
-import  {DelLastElement,GetLastElement,GetLastValue,IsDotExist,IsLastOperationSign,DivideByZero,Square,PlusMinus} from './CalculatorMethods';
-import {styles} from '../../Styles';
-import { strings } from "../../Localization";
+import  {DelLastElement,GetLastElement,GetLastValue,IsDotExist,IsLastOperationSign,DivideByZero,Square,PlusMinus} from './calculatorMethods';
+import {styles} from '../../styles';
+import { strings } from "../../languageChange/localization";
 
 export default class Calculator extends Component{
   constructor(props){

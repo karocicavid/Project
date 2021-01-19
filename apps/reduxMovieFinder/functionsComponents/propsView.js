@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, TouchableOpacity} from 'react-native';
-import {styles} from "../Styles/styles"; 
+import {styles} from "../styles/styles"; 
 import { ChangeImage } from "./imageView";
-import {strings} from "../../../Localization";
+import {strings} from "../../../languageChange/localization";
 
 export const ViewFromProps=(props)=>{
     if(props.props.route.name == "Back to search"){ //favorite screen

@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import MovieFinder from './Component/MovieFinder';
-import { strings } from "../../Localization";
+import MovieFinder from './component/movieFinder';
+import { strings } from "../../languageChange/localization";
 const MyStack = createStackNavigator();
 
 export default class App extends Component {

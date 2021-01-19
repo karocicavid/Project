@@ -36,11 +36,21 @@ export const styles=StyleSheet.create({
     },
     imageForScreens :{
         flex:1,
-        alignItems:'flex-start',
         justifyContent:'flex-start',
         width:'100%',
         height:'100%',
         resizeMode:'cover',
+    },
+    touchableMovie:
+    {width:'60%',
+    height:'50%'
+    },
+    logoButton:{
+      alignSelf:'center'
+    },
+    logo:{
+      height:50,
+      width:50
     },
     imageClose :{
         flex:1,
@@ -175,5 +185,20 @@ export const styles=StyleSheet.create({
       specialFont:{
         fontSize : 42,
         color:'white'
+      },
+      settingsView:{
+        flex:1,
+        backgroundColor:'gray'
+      },
+      flagsView:{
+        flex:1,
+        alignItems:'flex-start'
+      },
+      flagBetween:{
+        top:10
+      },
+      flagsSize:{
+        width:80,
+        height:50
       }
   })

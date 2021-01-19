@@ -19,7 +19,6 @@ export const strings = new LocalizedStrings({
    error:'Error',
    hideDescriptions:'Hide Description',
    backToSearch:'Back to search',
-   movieFinder:'MovieFinder'
  },
  ru: {
     toSensei:'С возвращением Сенсей!',
@@ -40,6 +39,5 @@ export const strings = new LocalizedStrings({
     error:'Ошибка',
     hideDescriptions:'Закрыть',
     backToSearch:'Назад к поиску',
-    movieFinder:'ПоискФильмов'
  }
 });

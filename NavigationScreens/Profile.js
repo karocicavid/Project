@@ -1,11 +1,12 @@
 import React from 'react';
-import {Image} from 'react-native';
-import {styles} from '../Styles/styles';
-import {LogoTitle} from "../Logo";
+import {Image, ImageBackground} from 'react-native';
+import {styles} from '../styles/styles';
+import {LogoTitle} from "../logo";
 
 export function ProfileScreen({navigation}) {
-    return(<>
-    <LogoTitle navigation={navigation}/>
-    <Image style={styles.imageForScreens} source={require('../image/profile.png')}/>
-    </>) 
+    return(
+    <ImageBackground style={styles.imageForScreens} source={require('../image/profile.png')}>
+        <LogoTitle navigation={navigation}/>
+    </ImageBackground>
+    ) 
 }
